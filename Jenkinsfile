@@ -1,10 +1,14 @@
 pipeline {
     agent any
 
+    tools {
+        python 'python3' // Replace 'python3' with the Python installation label configured in Jenkins
+    }
+
     stages {
-        stage('Run') {
+        stage('version') {
             steps {
-                bat 'helloworld.py'
+                bat 'python --version'
             }
         }
     }
