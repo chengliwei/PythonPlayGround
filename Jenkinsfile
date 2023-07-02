@@ -2,9 +2,15 @@ pipeline {
     agent any
 
     stages {
-        stage('version') {
+        stage('Checkout') {
             steps {
-                bat 'python --version'
+                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/chengliwei/PythonPlayGround.git']])
+            }
+        }
+
+        stage('Run Script') {
+            steps {
+                bat 'python helloworld.py'
             }
         }
     }
