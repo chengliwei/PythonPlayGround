@@ -8,7 +8,7 @@ pipeline {
             }
         }
 
-        stage('Run Script') {
+        stage('Run Python Script') {
             steps {
                 powershell 'python helloworld.py'
             }
