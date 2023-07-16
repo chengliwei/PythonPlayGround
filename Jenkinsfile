@@ -29,7 +29,7 @@ pipeline {
 
         stage('Run Python Script') {
             steps {
-                powershell "python helloworld.py $coolVariable $radVariable $adminEmail"
+                powershell "python helloworld.py --coolVariable $coolVariable  --radVariable $radVariable --adminEmail $adminEmail"
             }
         }
     }
