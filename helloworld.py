@@ -2,6 +2,6 @@ import sys
 
 
 print("hello from python")
-argument = sys.argv[1]
+argument = sys.argv
 print(argument)
 
