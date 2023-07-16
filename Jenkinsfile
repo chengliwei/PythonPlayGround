@@ -15,7 +15,9 @@ pipeline {
                     echo "Reading ${pipelinePropertiesFile}"
                     PipelineProperties = readProperties(file: "$pipelinePropertiesFile")
                     coolVariable = PipelineProperties.coolVariable
-                    echo "${coolVariable}"
+                    radVariable = PipelineProperties.radVariable
+                    adminEmail = PipelineProperties.adminEmail
+                    //echo "${coolVariable}"
 
                 }
             }
@@ -23,7 +25,7 @@ pipeline {
 
         stage('Run Python Script') {
             steps {
-                powershell "python helloworld.py $coolVariable"
+                powershell "python helloworld.py $coolVariable $radVariable $adminEmail"
             }
         }
     }
