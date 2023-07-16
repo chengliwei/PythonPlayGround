@@ -8,6 +8,19 @@ pipeline {
             }
         }
 
+        stage ('Set Properties Files Variables') {
+            steps {
+                script {
+                    pipelinePropertiesFile = 'prod.properties'
+                    echo "Reading ${pipelinePropertiesFile}"
+                    PipelineProperties = readProperties(file: "$pipelinePropertiesFile")
+                    coolVariable = PipelineProperties.coolVariable
+                    echo $coolVariable
+
+                }
+            }
+        }
+
         stage('Run Python Script') {
             steps {
                 powershell 'python helloworld.py'
