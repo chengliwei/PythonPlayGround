@@ -14,7 +14,7 @@ adminEmail = args.adminEmail
 coolVariable = args.coolVariable
 radVariable = args.radVariable
 
-print(f'This is the email: adminEmail')
-print(f'This is the email: coolVariable')
-print(f'This is the email: radVariable')
+print(f'This is the email: {adminEmail}')
+print(f'This is the email: {coolVariable}')
+print(f'This is the email: {radVariable}')
 
