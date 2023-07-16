@@ -2,6 +2,6 @@ import sys
 
 
 print("hello from python")
-
-print(coolVariable)
+argument = sys.argv[1]
+print(argument)
 
