@@ -15,7 +15,7 @@ pipeline {
                     echo "Reading ${pipelinePropertiesFile}"
                     PipelineProperties = readProperties(file: "$pipelinePropertiesFile")
                     coolVariable = PipelineProperties.coolVariable
-                    echo $coolVariable
+                    echo ${coolVariable}
 
                 }
             }
